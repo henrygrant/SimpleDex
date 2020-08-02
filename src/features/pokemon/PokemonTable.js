@@ -1,17 +1,9 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  selectEntities,
-  fetchAllPokemon
-} from './pokemonSlice';
+import React from 'react';
 import styles from './PokemonTable.module.css';
+import { connect } from 'react-redux'
 
 
-export function PokemonTable() {
-  const dispatch = useDispatch();
-  useEffect(() => dispatch(fetchAllPokemon()), [dispatch])
-  const pokemon = useSelector(selectEntities);
-
+const PokemonTable = (props) => {
   return (
     <table className={styles.table}>
       <thead>
@@ -26,7 +18,7 @@ export function PokemonTable() {
         </tr>
       </thead>
       <tbody>
-        {pokemon.map(P => 
+        {props.pokemon.map(P => 
           <tr key={P.id} className={styles.row}>
             <td>
               <input type='checkbox'></input>
@@ -40,8 +32,8 @@ export function PokemonTable() {
           </tr>
         )}
       </tbody>
-      
-      
     </table>
   );
 }
+
+export default connect(state => ({pokemon: state.pokemon}))(PokemonTable)

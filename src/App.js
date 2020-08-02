@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import { PokemonTable } from './features/pokemon/PokemonTable';
+import PokemonTable from './features/pokemon/PokemonTable';
 import './App.css';
 
 function App() {
