@@ -16,17 +16,18 @@ const TableContainer = styled.div`
     td {
       text-align: center;
     }
-
-    tr {
-      cursor: pointer;
-      
-      &:hover {
-        background-color: white;
-        color: darkslategrey;
-      }
-
-      &.checked:not(:hover) {
-        background-color: #5d8675;
+    tbody {
+      tr {
+        cursor: pointer;
+        
+        &:hover {
+          background-color: white;
+          color: darkslategrey;
+        }
+  
+        &.checked:not(:hover) {
+          background-color: #5d8675;
+        }
       }
     }
   }
