@@ -7,7 +7,7 @@ const store = createStore(
     reducers,
     applyMiddleware(
         thunkMiddleware
-    )
+    ),
 )
 
 store.dispatch(fetchAllPokemon()).then(() => console.log(store.getState()))

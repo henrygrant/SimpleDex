@@ -1,15 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import PokemonTable from './features/pokemon/PokemonTable';
+import PokemonDetail from './features/pokemon/PokemonDetail';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <PokemonTable />
+    <div className="app">
+      <div className="tableContainer">
+        <PokemonTable />
+      </div>
+      <div className="detailContainer">
+        <PokemonDetail />
+      </div>
     </div>
   );
 }

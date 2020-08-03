@@ -1,4 +1,4 @@
-import fetchPokemon from '../pokemonAPI'
+import getAllPokemon from '../pokemonAPI'
 
 export const REQUEST_ALL_POKEMON = "REQUEST_ALL_POKEMON"
 function requestAllPokemon() {
@@ -15,9 +15,17 @@ function receiveAllPokemon(json) {
     }
 }
 
+export const SELECT_POKEMON = "SELECT_POKEMON"
+export function selectPokemon(pokemon) {
+    return {
+        type: SELECT_POKEMON,
+        selectedPokemon: pokemon
+    }
+}
+
 export function fetchAllPokemon() {
     return function(dispatch) {
         dispatch(requestAllPokemon())
-        return fetchPokemon().then(response => dispatch(receiveAllPokemon(response)))
+        return getAllPokemon().then(response => dispatch(receiveAllPokemon(response)))
     }
 }

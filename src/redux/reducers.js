@@ -1,7 +1,7 @@
 const initialState = {
     pokemon: [],
-    selectedPokemon: [],
-    detailedPokemon: {},
+    selectedPokemon: {},
+    detailedPokemonId: null,
     isFetching: false
 }
 
@@ -16,6 +16,11 @@ export default function(state = initialState, action) {
             return Object.assign({}, state, {
                 isFetching: false,
                 pokemon: action.pokemon
+            })
+        }
+        case 'SELECT_POKEMON': {
+            return Object.assign({}, state, {
+                selectedPokemon: action.selectedPokemon
             })
         }
         default:

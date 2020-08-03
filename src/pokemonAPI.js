@@ -29408,7 +29408,7 @@ const cache = [
     }
   ]
 
-export default async function fetchPokemon() {
+export default async function getAllPokemon() {
     try {
         // const promises = []
         // const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=3')
@@ -29424,15 +29424,4 @@ export default async function fetchPokemon() {
     } catch(error) {
         console.log(error)
     }
-}
-
-async function fetchPokeInfo(poke) {
-    try {
-        const resp = await fetch(poke.url)
-        const pokeData = resp.json()
-        return pokeData
-    } catch(error) {
-        console.log(error)
-    }
-    
 }
