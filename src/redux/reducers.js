@@ -15,7 +15,6 @@ const initialState = {
 const setChecked = (arr, val) => {
     let pokemon = arr.find(P => P.id === val)
     pokemon.checked = pokemon.checked ? false : true
-    console.log(arr)
     return arr
 }
 

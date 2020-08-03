@@ -15,11 +15,11 @@ export default async function getAllPokemon() {
 }
 
 async function fetchPokeInfo(poke) {
-  try {
-      const resp = await fetch(poke.url)
-      const pokeData = resp.json()
-      return pokeData
-  } catch(error) {
-      console.log(error)
-  }
+    try {
+        const resp = await fetch(poke.url)
+        const pokeData = resp.json()
+        return pokeData
+    } catch(error) {
+        console.log(error)
+    }
 }
