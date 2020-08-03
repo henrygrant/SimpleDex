@@ -3,7 +3,8 @@ import {
     REQUEST_ALL_POKEMON,
     RECEIVE_ALL_POKEMON,
     SELECT_POKEMON,
-    CHECK_POKEMON
+    CHECK_POKEMON,
+    SET_API_ERROR
 } from './actionTypes'
 
 function requestAllPokemon() {
@@ -33,10 +34,23 @@ export function checkPokemon(id) {
     }
 }
 
+export function setApiError() {
+    return {
+        type: SET_API_ERROR
+    }
+}
+
+
 export function fetchAllPokemon() {
     return function(dispatch) {
         dispatch(requestAllPokemon())
         return getAllPokemon()
-        .then(data => dispatch(receiveAllPokemon(data)))
+        .then(data => {
+            if(data.length) {
+                dispatch(receiveAllPokemon(data))
+            } else {
+                dispatch(setApiError())
+            }
+        })
     }
 }

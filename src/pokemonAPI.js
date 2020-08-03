@@ -9,8 +9,9 @@ export default async function getAllPokemon() {
         })
         const ret = await Promise.all(promises)
         return ret
-    } catch(error) {
-        console.log(error)
+    } catch(e) {
+        console.error(e)
+        return []
     }
 }
 
@@ -19,7 +20,8 @@ async function fetchPokeInfo(poke) {
         const resp = await fetch(poke.url)
         const pokeData = resp.json()
         return pokeData
-    } catch(error) {
-        console.log(error)
+    } catch(e) {
+        console.error(e)
+        return {}
     }
 }

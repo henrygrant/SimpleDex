@@ -36,6 +36,13 @@ const Loader = styled.div`
   }
 `
 
+const Error = styled.div`
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 const Container = styled.div`
   height: 100vh;
   display: grid;
@@ -68,7 +75,11 @@ const App = props => {
     {props.isFetching ? 
       <Loader>
         <div />
-      </Loader> :
+      </Loader> : 
+      props.apiError ? 
+      <Error>
+        <div>There was an error fetching data from the API. Please try again later.</div>
+      </Error> :
       <Container>
         <Section>
           <PokemonTable />
@@ -83,4 +94,4 @@ const App = props => {
   )
 }
 
-export default connect(state => ({isFetching: state.isFetching}))(App)
+export default connect(state => ({isFetching: state.isFetching, apiError: state.apiError}))(App)

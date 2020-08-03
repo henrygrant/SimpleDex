@@ -2,14 +2,15 @@ import {
     REQUEST_ALL_POKEMON,
     RECEIVE_ALL_POKEMON,
     SELECT_POKEMON,
-    CHECK_POKEMON
+    CHECK_POKEMON,
+    SET_API_ERROR
 } from './actionTypes'
 
 const initialState = {
     pokemon: [],
-    checkedPokemonIds: [],
     selectedPokemon: {},
-    isFetching: false
+    isFetching: false,
+    apiError: false
 }
 
 export default function(state = initialState, action) {
@@ -40,6 +41,13 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 pokemon: pokemon
+            }
+        }
+        case SET_API_ERROR: {
+            return {
+                ...state,
+                apiError: true,
+                isFetching: false
             }
         }
         default:
