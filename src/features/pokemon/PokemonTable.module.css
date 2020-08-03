@@ -1,7 +1,24 @@
+.tableContainer {
+  overflow: auto;
+  height: 100%;
+  border: solid 1px white;
+}
+
 .table {
   border-collapse: collapse;
   width: 100%;
-  border: solid 1px white;
+}
+
+.table td {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.table thead th {
+  position: sticky;
 }
 
 .tbody {

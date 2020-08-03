@@ -53,7 +53,7 @@ const PokemonDetail = props => {
             
           </div>
           <div className={styles.info}>
-            <div className={styles.infoTitle}>Moves:</div>
+            <div className={styles.infoTitle}>Moves</div>
             {props.selectedPokemon.moves.map(T => <div key={T.move.name}>{T.move.name}</div>)}
           </div>
         </div>

@@ -13,10 +13,18 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr .5fr;
   grid-template-areas: "tableContainer detailContainer"
                        "tableContainer detailContainer";
 } 
+
+@media only screen and (max-width: 985px) {
+  .app {
+    grid-template-areas: "detailContainer detailContainer"
+                         "tableContainer tableContainer";
+  }
+  
+}
 
 .tableContainer {
   grid-area: tableContainer;

@@ -38,6 +38,12 @@
     width: 50%;
 }
 
+@media only screen and (max-width: 985px) {
+    .sprite img {
+        width: 25%;
+    }
+}
+
 .abilities {
     margin-top: 1rem;
     display: flex;
@@ -65,16 +71,36 @@
     height: 100%;
     overflow-y: auto;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info table {
+    width: 100%;
+}
+
+.info table {
+    text-align: center;
 }
 
 .info td:last-child {
     text-align: center;
 }
 
-
 .infoTitle {
     font-weight: bold;
     margin-bottom: .5rem;
+}
+
+.info {
+    border: 1px solid white;
+    height: 100%;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
