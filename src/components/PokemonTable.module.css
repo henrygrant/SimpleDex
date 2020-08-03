@@ -34,3 +34,7 @@
   background-color: white;
   color: darkslategrey;
 }
+
+.checkedRow {
+  background-color: red;
+}

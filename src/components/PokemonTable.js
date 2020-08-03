@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { selectPokemon } from '../redux/actions'
+import { selectPokemon, checkPokemon } from '../redux/actions'
 import styles from './PokemonTable.module.css'
 
 const PokemonTable = props => {
@@ -22,11 +22,14 @@ const PokemonTable = props => {
           {props.pokemon.map(P => 
             <tr 
               key={P.id} 
-              className={styles.row}
+              className={P.checked ? styles.checkedRow : styles.row}
               onClick={() => props.dispatch(selectPokemon(P))}
             >
               <td>
-                <input type='checkbox'></input>
+                <input 
+                  type='checkbox' 
+                  onChange={() => { P.checked = !P.checked}}
+                  />
               </td>
               <td>{P.id}</td>
               <td>{P.name}</td>

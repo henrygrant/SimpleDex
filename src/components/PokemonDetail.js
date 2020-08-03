@@ -56,8 +56,13 @@ const PokemonDetail = props => {
             {props.selectedPokemon.moves.map(T => <div key={T.move.name}>{T.move.name}</div>)}
           </div>
         </div>
-      </div>
-    : <div /> }
+      </div> :
+      <div className={styles.placeholder}>
+        <h1>SimpleDex</h1>
+        <p>This is a simple project showing off data from <a href="http://pokeapi.co">PokéAPI</a> using React and Redux.</p>
+        <p>Click a pokemon to get started!</p>
+      </div> 
+    }
     </>
     )
 }

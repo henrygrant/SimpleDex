@@ -1,21 +1,24 @@
 import getAllPokemon from '../pokemonAPI'
+import {
+    REQUEST_ALL_POKEMON,
+    RECEIVE_ALL_POKEMON,
+    SELECT_POKEMON,
+    CHECK_POKEMON
+} from './actionTypes'
 
-export const REQUEST_ALL_POKEMON = "REQUEST_ALL_POKEMON"
 function requestAllPokemon() {
     return {
         type: REQUEST_ALL_POKEMON
     }
 }
 
-export const RECEIVE_ALL_POKEMON = "RECEIVE_ALL_POKEMON"
-function receiveAllPokemon(json) {
+function receiveAllPokemon(data) {
     return {
         type: RECEIVE_ALL_POKEMON,
-        pokemon: json
+        pokemon: data
     }
 }
 
-export const SELECT_POKEMON = "SELECT_POKEMON"
 export function selectPokemon(pokemon) {
     return {
         type: SELECT_POKEMON,
@@ -23,9 +26,17 @@ export function selectPokemon(pokemon) {
     }
 }
 
+export function checkPokemon(id) {
+    return {
+        type: CHECK_POKEMON,
+        checkedPokemonId: id
+    }
+}
+
 export function fetchAllPokemon() {
     return function(dispatch) {
         dispatch(requestAllPokemon())
-        return getAllPokemon().then(response => dispatch(receiveAllPokemon(response)))
+        return getAllPokemon()
+        .then(data => dispatch(receiveAllPokemon(data)))
     }
 }

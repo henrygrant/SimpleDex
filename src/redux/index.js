@@ -10,4 +10,5 @@ const store = createStore(
     ),
 )
 store.dispatch(fetchAllPokemon())
+window.store = store
 export default store
