@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { selectPokemon, checkPokemon } from '../redux/actions'
+import { selectPokemon } from '../redux/actions'
 import styled from 'styled-components'
 
 const TableContainer = styled.div`
