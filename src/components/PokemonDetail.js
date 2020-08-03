@@ -96,6 +96,11 @@ const Placeholder = styled.div`
   justify-content: center;
   flex-direction: column;
 
+  p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+  }
   a {
     color: white;
   }
