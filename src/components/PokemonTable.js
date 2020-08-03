@@ -26,7 +26,7 @@ const TableContainer = styled.div`
       }
 
       &.checked:not(:hover) {
-        background-color: slategrey;
+        background-color: #5d8675;
       }
     }
   }
