@@ -9,6 +9,5 @@ const store = createStore(
         thunkMiddleware
     ),
 )
-store.dispatch(fetchAllPokemon()).then(() => console.log(store.getState()))
-
+store.dispatch(fetchAllPokemon())
 export default store
