@@ -1,0 +1,36 @@
+.tableContainer {
+  overflow: auto;
+  height: 100%;
+  border: solid 1px white;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table td {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.table thead th {
+  position: sticky;
+}
+
+.tbody {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.row:hover {
+  background-color: white;
+  color: darkslategrey;
+}
