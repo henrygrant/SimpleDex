@@ -1,7 +1,7 @@
-import React from 'react';
-import PokemonTable from './features/pokemon/PokemonTable';
-import PokemonDetail from './features/pokemon/PokemonDetail';
-import './App.css';
+import React from 'react'
+import PokemonTable from './components/PokemonTable'
+import PokemonDetail from './components/PokemonDetail'
+import './App.css'
 
 function App() {
   return (
@@ -16,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

@@ -22,5 +22,4 @@ async function fetchPokeInfo(poke) {
   } catch(error) {
       console.log(error)
   }
-  
 }
