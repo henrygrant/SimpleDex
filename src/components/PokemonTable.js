@@ -1,12 +1,36 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { selectPokemon, checkPokemon } from '../redux/actions'
-import styles from './PokemonTable.module.css'
+import styled from 'styled-components'
+
+const TableContainer = styled.div`
+  overflow: auto;
+  height: 100%;
+  border: solid 1px white;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    td {
+      text-align: center;
+    }
+
+    tr {
+      cursor: pointer;
+      
+      &:hover {
+        background-color: white;
+        color: darkslategrey;
+      }
+    }
+  }
+`
 
 const PokemonTable = props => {
   return (
-    <div className={styles.tableContainer}>
-      <table className={styles.table}>
+    <TableContainer>
+      <table>
         <thead>
           <tr>
             <th></th>
@@ -18,11 +42,10 @@ const PokemonTable = props => {
             <th>Base XP</th>
           </tr>
         </thead>
-        <tbody className={styles.tbody}>
+        <tbody>
           {props.pokemon.map(P => 
             <tr 
               key={P.id} 
-              className={P.checked ? styles.checkedRow : styles.row}
               onClick={() => props.dispatch(selectPokemon(P))}
             >
               <td>
@@ -41,7 +64,7 @@ const PokemonTable = props => {
           )}
         </tbody>
       </table>
-    </div>
+    </TableContainer>
   )
 }
 
