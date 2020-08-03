@@ -12,34 +12,35 @@ const initialState = {
     isFetching: false
 }
 
-const setChecked = (arr, val) => {
-    let pokemon = arr.find(P => P.id === val)
-    pokemon.checked = pokemon.checked ? false : true
-    return arr
-}
-
 export default function(state = initialState, action) {
     switch (action.type) {
         case REQUEST_ALL_POKEMON: {
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 isFetching: true
-            })
+            }
         }
         case RECEIVE_ALL_POKEMON: {
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 isFetching: false,
                 pokemon: action.pokemon
-            })
+            }
         }
         case SELECT_POKEMON: {
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 selectedPokemon: action.selectedPokemon
-            })
+            }
         }
         case CHECK_POKEMON: {
-            return Object.assign({}, state, {
-                pokemon: setChecked(state.pokemon, action.checkedPokemonId)
-            })
+            const pokemon = [...state.pokemon]
+            const poke = pokemon.find(P => P.id === action.checkedPokemonId)
+            if(poke) poke.checked = !poke.checked
+            return {
+                ...state,
+                pokemon: pokemon
+            }
         }
         default:
             return state
