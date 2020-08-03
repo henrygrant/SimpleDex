@@ -1,5 +1,5 @@
 # SimpleDex
-A simple PokeDex project based off data from the [PokéAPI](http://pokeapi.co)
+A simple gen 1 PokeDex project based off data from the [PokéAPI](http://pokeapi.co)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using [Redux](https://redux.js.org/).
 
